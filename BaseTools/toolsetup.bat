@@ -395,10 +395,10 @@ goto end
 
 :check_freezer_path
   endlocal
-  if defined BASETOOLS_PYTHON_SOURCE goto print_python_info
+  @rem here's where we setup the Edk2SourceSetup
+  %PYTHON_COMMAND% %BASE_TOOLS_PATH%\Edk2SourceSetup.py
+  call %BASE_TOOLS_PATH%\.venv\Scripts\activate.bat
   set "PATH=%BASE_TOOLS_PATH%\BinWrappers\WindowsLike;%PATH%"
-  set BASETOOLS_PYTHON_SOURCE=%BASE_TOOLS_PATH%\Source\Python
-  set PYTHONPATH=%BASETOOLS_PYTHON_SOURCE%;%PYTHONPATH%
 
 :print_python_info
   echo                PATH = %PATH%
@@ -410,6 +410,7 @@ goto end
     echo      PYTHON_COMMAND = %PYTHON_COMMAND%
   )
   echo          PYTHONPATH = %PYTHONPATH%
+  echo      PYTHON_COMMAND = %PYTHON_COMMAND%
   echo.
 
 :VisualStudioAvailable

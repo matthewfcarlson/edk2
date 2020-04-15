@@ -5,6 +5,7 @@
 *.ilk
 *.exe
 *.pyc
+.venv
 Source/C/VfrCompile/EfiVfrParser.cpp
 Source/C/VfrCompile/EfiVfrParser.h
 Source/C/VfrCompile/Pccts/antlr/antlr
