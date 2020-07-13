@@ -13,7 +13,11 @@
 ///
 /// Define used to enable all the crypto services in a family
 ///
-#define PCD_CRYPTO_SERVICE_ENABLE_FAMILY  0xFFFFFFFF
+#define PCD_CRYPTO_SERVICE_ENABLE_FAMILY   0xFFFFFFFF
+///
+/// Define used to disable all the crypto services in a family
+///
+#define PCD_CRYPTO_SERVICE_DISABLE_FAMILY  0x00000000
 
 ///
 /// PCD_CRYPTO_SERVICE_FAMILY_ENABLE structure.  Each field in this structure
