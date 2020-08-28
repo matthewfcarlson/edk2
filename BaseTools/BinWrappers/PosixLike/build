@@ -10,4 +10,4 @@ full_cmd=${BASH_SOURCE:-$0} # see http://mywiki.wooledge.org/BashFAQ/028 for a d
 dir=$(dirname "$full_cmd")
 cmd=${full_cmd##*/}
 
-exec "${python_exe:-python}" -m edk2toolbase.build.build "$@"
+exec "${python_exe:-python}" -m edk2basetools.build.build "$@"

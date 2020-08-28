@@ -1,3 +1,3 @@
 @setlocal
 @set ToolName=%~n0%
-@%PYTHON_COMMAND% -m edk2toolbase.build.build %*
+@%PYTHON_COMMAND% -m edk2basetools.build.build %*
