@@ -237,6 +237,9 @@ INF  OvmfPkg/PvScsiDxe/PvScsiDxe.inf
 !if $(MPT_SCSI_ENABLE) == TRUE
 INF  OvmfPkg/MptScsiDxe/MptScsiDxe.inf
 !endif
+!if $(LSI_SCSI_ENABLE) == TRUE
+INF  OvmfPkg/LsiScsiDxe/LsiScsiDxe.inf
+!endif
 
 !if $(SECURE_BOOT_ENABLE) == TRUE
   INF  SecurityPkg/VariableAuthenticated/SecureBootConfigDxe/SecureBootConfigDxe.inf
@@ -291,6 +294,7 @@ INF  MdeModulePkg/Universal/Disk/UdfDxe/UdfDxe.inf
 
 !if $(TOOL_CHAIN_TAG) != "XCODE5"
 INF  ShellPkg/DynamicCommand/TftpDynamicCommand/TftpDynamicCommand.inf
+INF  ShellPkg/DynamicCommand/HttpDynamicCommand/HttpDynamicCommand.inf
 INF  OvmfPkg/LinuxInitrdDynamicShellCommand/LinuxInitrdDynamicShellCommand.inf
 !endif
 INF  ShellPkg/Application/Shell/Shell.inf

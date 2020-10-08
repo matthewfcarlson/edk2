@@ -546,11 +546,11 @@ EndList
                 #DEFINE FSP_T_UPD_TOOL_GUID = 34686CA3-34F9-4901-B82A-BA630F0714C6
                 #DEFINE FSP_M_UPD_TOOL_GUID = 39A250DB-E465-4DD1-A2AC-E2BD3C0E2385
                 #DEFINE FSP_S_UPD_TOOL_GUID = CAE3605B-5B34-4C85-B3D7-27D54273C40F
-                Match = re.match("^\s*(?:DEFINE\s+)*(\w+)\s*=\s*([-.\w]+)", DscLine)
+                Match = re.match("^\s*(?:DEFINE\s+)*(\w+)\s*=\s*([/$()-.\w]+)", DscLine)
                 if Match:
-                    self._MacroDict[Match.group(1)] = Match.group(2)
+                    self._MacroDict[Match.group(1)] = self.ExpandMacros(Match.group(2))
                     if self.Debug:
-                        print ("INFO : DEFINE %s = [ %s ]" % (Match.group(1), Match.group(2)))
+                        print ("INFO : DEFINE %s = [ %s ]" % (Match.group(1), self.ExpandMacros(Match.group(2))))
             elif IsPcdSect:
                 #gSiPkgTokenSpaceGuid.PcdTxtEnable|FALSE
                 #gSiPkgTokenSpaceGuid.PcdOverclockEnable|TRUE
@@ -1177,6 +1177,7 @@ EndList
         UpdSignatureCheck = ['FSPT_UPD_SIGNATURE', 'FSPM_UPD_SIGNATURE', 'FSPS_UPD_SIGNATURE']
         ExcludedSpecificUpd = ['FSPT_ARCH_UPD', 'FSPM_ARCH_UPD', 'FSPS_ARCH_UPD']
 
+        IncLines = []
         if InputHeaderFile != '':
             if not os.path.exists(InputHeaderFile):
                  self.Error = "Input header file '%s' does not exist" % InputHeaderFile

@@ -1,7 +1,7 @@
 ## @file
 # EFI/PI MdePkg Package
 #
-# Copyright (c) 2007 - 2018, Intel Corporation. All rights reserved.<BR>
+# Copyright (c) 2007 - 2020, Intel Corporation. All rights reserved.<BR>
 # Portions copyright (c) 2008 - 2009, Apple Inc. All rights reserved.<BR>
 # (C) Copyright 2020 Hewlett Packard Enterprise Development LP<BR>
 #
@@ -35,7 +35,9 @@
 [Components]
   MdePkg/Library/UefiFileHandleLib/UefiFileHandleLib.inf
   MdePkg/Library/BaseCacheMaintenanceLib/BaseCacheMaintenanceLib.inf
+  MdePkg/Library/BaseCacheMaintenanceLibNull/BaseCacheMaintenanceLibNull.inf
   MdePkg/Library/BaseCpuLib/BaseCpuLib.inf
+  MdePkg/Library/BaseCpuLibNull/BaseCpuLibNull.inf
   MdePkg/Library/BaseDebugLibNull/BaseDebugLibNull.inf
   MdePkg/Library/BaseDebugLibSerialPort/BaseDebugLibSerialPort.inf
   MdePkg/Library/BaseDebugPrintErrorLevelLib/BaseDebugPrintErrorLevelLib.inf
@@ -60,6 +62,10 @@
   MdePkg/Library/BasePostCodeLibPort80/BasePostCodeLibPort80.inf
   MdePkg/Library/BasePrintLib/BasePrintLib.inf
   MdePkg/Library/BaseReportStatusCodeLibNull/BaseReportStatusCodeLibNull.inf
+  MdePkg/Library/DxeRngLib/DxeRngLib.inf
+  MdePkg/Library/BaseRngLibNull/BaseRngLibNull.inf
+  MdePkg/Library/BaseRngLibTimerLib/BaseRngLibTimerLib.inf
+
   MdePkg/Library/BaseSerialPortLibNull/BaseSerialPortLibNull.inf
   MdePkg/Library/BaseSynchronizationLib/BaseSynchronizationLib.inf
   MdePkg/Library/BaseTimerLibNullTemplate/BaseTimerLibNullTemplate.inf
@@ -67,7 +73,6 @@
   MdePkg/Library/BaseUefiDecompressLib/BaseUefiTianoCustomDecompressLib.inf
   MdePkg/Library/BaseSmbusLibNull/BaseSmbusLibNull.inf
   MdePkg/Library/BaseSafeIntLib/BaseSafeIntLib.inf
-  MdePkg/Library/BaseRngLibNull/BaseRngLibNull.inf
 
   MdePkg/Library/DxeCoreEntryPoint/DxeCoreEntryPoint.inf
   MdePkg/Library/DxeCoreHobLib/DxeCoreHobLib.inf
