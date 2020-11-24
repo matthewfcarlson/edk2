@@ -155,46 +155,15 @@
   }
   CryptoPkg/Driver/CryptoPei.inf {
     <Defines>
-      FILE_GUID = 8DF53C2E-3380-495F-A8B7-370CFE28E1C6
+      FILE_GUID = 0F5827A9-35FD-4F41-8D38-9BAFCE594D31
     <PcdsFixedAtBuild>
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.HmacSha256.Family           | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Md5.Family                  | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Pkcs.Family                 | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Dh.Family                   | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Random.Family               | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Rsa.Family                  | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Sha1.Family                 | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Sha256.Family               | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Sha384.Family               | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Sha512.Family               | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.X509.Family                 | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Tdes.Family                 | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Aes.Services.GetContextSize | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Aes.Services.Init           | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Aes.Services.CbcEncrypt     | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Aes.Services.CbcDecrypt     | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Arc4.Family                 | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Sm3.Family                  | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Hkdf.Family                 | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Tls.Family                  | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.TlsSet.Family               | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.TlsGet.Family               | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
+      !include CryptoPkg/Driver/Flavors/MINIMAL.inc.dsc
   }
   CryptoPkg/Driver/CryptoPei.inf {
     <Defines>
-      FILE_GUID = 0F5827A9-35FD-4F41-8D38-9BAFCE594D31
+      FILE_GUID = 8DF53C2E-3380-495F-A8B7-370CFE28E1C6
     <PcdsFixedAtBuild>
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.HmacSha256.Family               | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Sha1.Family                     | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Sha256.Family                   | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Sha384.Family                   | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Sha512.Family                   | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Sm3.Family                      | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Rsa.Services.Pkcs1Verify        | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Rsa.Services.New                | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Rsa.Services.Free               | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Rsa.Services.SetKey             | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Pkcs.Services.Pkcs5HashPassword | TRUE
+      !include CryptoPkg/Driver/Flavors/STANDARD.inc.dsc
   }
 
 [Components.IA32, Components.X64, Components.AARCH64]
@@ -204,62 +173,21 @@
   }
   CryptoPkg/Driver/CryptoDxe.inf {
     <Defines>
+      FILE_GUID = D9444B06-060D-42C5-9344-F04707BE0100
+    <PcdsFixedAtBuild>
+      !include CryptoPkg/Driver/Flavors/MINIMAL.inc.dsc
+  }
+  CryptoPkg/Driver/CryptoDxe.inf {
+    <Defines>
       FILE_GUID = D9444B06-060D-42C5-9344-F04707BE0169
     <PcdsFixedAtBuild>
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.HmacSha256.Family           | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Md5.Family                  | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Pkcs.Family                 | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Dh.Family                   | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Random.Family               | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Rsa.Family                  | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Sha1.Family                 | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Sha256.Family               | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Sha384.Family               | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Sha512.Family               | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.X509.Family                 | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Tdes.Family                 | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Aes.Services.GetContextSize | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Aes.Services.Init           | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Aes.Services.CbcEncrypt     | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Aes.Services.CbcDecrypt     | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Arc4.Family                 | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Sm3.Family                  | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Hkdf.Family                 | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Tls.Family                  | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.TlsSet.Family               | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.TlsGet.Family               | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
+      !include CryptoPkg/Driver/Flavors/STANDARD.inc.dsc
   }
   CryptoPkg/Driver/CryptoDxe.inf {
     <Defines>
       FILE_GUID = DDF5BE9E-159A-4B77-B6D7-82B84B5763A2
     <PcdsFixedAtBuild>
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.HmacSha256.Family                        | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Pkcs.Services.Pkcs1v2Encrypt             | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Pkcs.Services.Pkcs5HashPassword          | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Pkcs.Services.Pkcs7Verify                | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Pkcs.Services.VerifyEKUsInPkcs7Signature | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Pkcs.Services.Pkcs7GetSigners            | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Pkcs.Services.Pkcs7FreeSigners           | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Pkcs.Services.AuthenticodeVerify         | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Random.Family                            | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Rsa.Services.Pkcs1Verify                 | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Rsa.Services.New                         | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Rsa.Services.Free                        | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Rsa.Services.SetKey                      | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Rsa.Services.GetPublicKeyFromX509        | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Sha1.Family                              | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Sha256.Family                            | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Sha256.Services.HashAll                  | FALSE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.X509.Services.GetSubjectName             | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.X509.Services.GetCommonName              | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.X509.Services.GetOrganizationName        | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.X509.Services.GetTBSCert                 | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Tls.Family                               | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.TlsSet.Family                            | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.TlsGet.Family                            | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Aes.Services.Init                        | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Aes.Services.CbcEncrypt                  | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Aes.Services.CbcDecrypt                  | TRUE
+      !include CryptoPkg/Driver/Flavors/EXPANDED.inc.dsc
   }
 
 [Components.IA32, Components.X64]
@@ -271,60 +199,13 @@
     <Defines>
       FILE_GUID = A3542CE8-77F7-49DC-A834-45D37D2EC1FA
     <PcdsFixedAtBuild>
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.HmacSha256.Family           | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Md5.Family                  | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Pkcs.Family                 | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Dh.Family                   | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Random.Family               | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Rsa.Family                  | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Sha1.Family                 | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Sha256.Family               | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Sha384.Family               | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Sha512.Family               | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.X509.Family                 | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Tdes.Family                 | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Aes.Services.GetContextSize | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Aes.Services.Init           | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Aes.Services.CbcEncrypt     | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Aes.Services.CbcDecrypt     | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Arc4.Family                 | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Sm3.Family                  | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Hkdf.Family                 | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Tls.Family                  | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.TlsSet.Family               | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.TlsGet.Family               | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
+      !include CryptoPkg/Driver/Flavors/STANDARD.inc.dsc
   }
   CryptoPkg/Driver/CryptoSmm.inf {
     <Defines>
       FILE_GUID = 85F7EA15-3A2B-474A-8875-180542CD6BF3
     <PcdsFixedAtBuild>
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.HmacSha256.Family                        | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Pkcs.Services.Pkcs1v2Encrypt             | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Pkcs.Services.Pkcs5HashPassword          | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Pkcs.Services.Pkcs7Verify                | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Pkcs.Services.VerifyEKUsInPkcs7Signature | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Pkcs.Services.Pkcs7GetSigners            | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Pkcs.Services.Pkcs7FreeSigners           | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Pkcs.Services.AuthenticodeVerify         | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Random.Family                            | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Rsa.Services.Pkcs1Verify                 | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Rsa.Services.New                         | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Rsa.Services.Free                        | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Rsa.Services.SetKey                      | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Rsa.Services.GetPublicKeyFromX509        | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Sha1.Family                              | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Sha256.Family                            | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Sha256.Services.HashAll                  | FALSE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.X509.Services.GetSubjectName             | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.X509.Services.GetCommonName              | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.X509.Services.GetOrganizationName        | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.X509.Services.GetTBSCert                 | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Tls.Family                               | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.TlsSet.Family                            | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.TlsGet.Family                            | PCD_CRYPTO_SERVICE_ENABLE_FAMILY
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Aes.Services.Init                        | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Aes.Services.CbcEncrypt                  | TRUE
-      gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceFamilyEnable.Aes.Services.CbcDecrypt                  | TRUE
+      !include CryptoPkg/Driver/Flavors/EXPANDED.inc.dsc
   }
 
 [BuildOptions]
